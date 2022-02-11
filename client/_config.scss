@@ -1,0 +1,45 @@
+@mixin media-sm {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin media-lg {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin media-xl {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin flex($justify, $alignItems) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+@mixin hide{
+  @include media-sm{
+    display: none;
+  }
+  @include media-md{
+    display: none;
+  }
+  
+}
+@mixin show{
+  @include media-lg{
+    display: block;
+  }
+  @include media-xl{
+    display: block;
+  }
+}

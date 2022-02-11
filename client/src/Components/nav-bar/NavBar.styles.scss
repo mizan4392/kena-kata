@@ -1,0 +1,75 @@
+@import "../../../config";
+
+.hamburger-icon-btn {
+  padding: 5px;
+  margin: 5px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none !important;
+  background: #001529 !important;
+  color: #fff !important;
+
+  
+}
+.icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.brand-logo {
+  color: #fff !important;
+  display: block;
+  @include media-sm {
+    display: none;
+  }
+  @include media-md{
+    display: none;
+  }
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 20px;
+}
+.header-search {
+  @include flex(center,center);
+  padding: 15px;
+}
+.header-cart {
+  @include flex(space-around,center);
+  padding: 15px;
+
+}
+
+.signin-text{
+  color: #fff;
+  font-size: 15px;
+}
+.hide-sm-icon{
+  display: block;
+  @include media-sm{
+    display: none;
+  }
+  @include media-md{
+    display: none;
+  }
+
+}
+
+.show-lg-icon{
+  @include media-lg{
+    display: none;
+  }
+  @include media-sm{
+    display: block;
+  }
+  
+  
+}
+
