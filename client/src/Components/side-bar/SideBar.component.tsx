@@ -1,12 +1,15 @@
 import { Layout, Menu } from 'antd';
 import React from 'react'
+import { useStoreState } from '../../hooks/store/store.hooks';
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 type Props = {}
 
 export default function SideBar({ }: Props) {
+
+    const { isSidebarOpen } = useStoreState(s => s.global)
     return (
-        <Sider className="site-layout-background" width={200}>
+        <Sider className="site-layout-background" width={isSidebarOpen ? 200 : 0}>
             <Menu
                 mode="inline"
                 defaultSelectedKeys={["1"]}

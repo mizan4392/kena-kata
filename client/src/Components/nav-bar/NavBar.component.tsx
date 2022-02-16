@@ -3,11 +3,16 @@ import "./NavBar.styles.scss";
 import { Button, Col, Layout, Row, Typography, Input } from "antd";
 import { AiFillNotification, AiFillShop, AiOutlineLogin, AiOutlineMenu } from 'react-icons/ai'
 import { BiDotsVerticalRounded } from 'react-icons/bi'
+import { useAppDispatch, useStoreState } from "../../hooks/store/store.hooks";
+import { toggleSideBar } from "../../redux/slices/global.slice";
 const { Header } = Layout;
 const { Search } = Input
 
 
 export default function NavBar() {
+
+    const dispatch = useAppDispatch()
+    const { isSidebarOpen } = useStoreState(s => s.global)
     return (
         <Header >
             <Row>
@@ -15,7 +20,9 @@ export default function NavBar() {
                     width: "20%"
                 }} >
                     <div className="brand-container" >
-                        <Button className="hamburger-icon-btn" >
+                        <Button className="hamburger-icon-btn" onClick={() => {
+                            dispatch(toggleSideBar(!isSidebarOpen))
+                        }} >
                             <AiOutlineMenu className="icon" />
                         </Button>
                         <Typography className="brand-logo" >
