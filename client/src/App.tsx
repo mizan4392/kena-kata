@@ -11,6 +11,7 @@ import "antd/dist/antd.css";
 import { Layout } from "antd";
 import SideBar from "./Components/side-bar/SideBar.component";
 import Product from "./Components/Product.component";
+import ProductCarousel from "./Components/carousel/ProductCarousel.component";
 const { Content } = Layout;
 function App() {
   return (
@@ -37,7 +38,7 @@ export default App;
 const RenderRoutes = () => {
   return (
     <Switch>
-      <Route exact path={ROUTES.ROOT} component={Product} />
+      <Route exact path={ROUTES.ROOT} component={ProductCarousel} />
       <Route exact path={ROUTES.SHOP} component={Shop} />
       <Route exact to={ROUTES.SIGN_IN} component={Authentication} />
     </Switch>
